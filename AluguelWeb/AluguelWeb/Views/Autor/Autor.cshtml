@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AluguelWeb.Models.Entidades.Autor>
+
+@{
+    ViewData["Title"] = "Autor";
+}
+
+<h2>Autor</h2>
+
+<p>
+    <a asp-action="CadastroAutor">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                <a asp-action="EdicaoAutor" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="DetalhesAutor" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="DeletarAutor" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

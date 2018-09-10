@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AluguelWeb.Models.Entidades.Cliente>
+
+@{
+    ViewData["Title"] = "Cliente";
+}
+
+<h2>Cliente</h2>
+
+<p>
+    <a asp-action="CadastroCliente">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                <a asp-action="EdicaoCliente" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="DetalhesCliente" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="DeletarCliente" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

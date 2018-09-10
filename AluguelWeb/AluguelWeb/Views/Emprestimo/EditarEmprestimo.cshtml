@@ -1,0 +1,49 @@
+﻿@model AluguelWeb.Models.Entidades.Emprestimo
+
+@{
+    ViewData["Title"] = "EditarEmprestimo";
+}
+
+<h2>Edição de Emprestimo</h2>
+
+<h4>Emprestimo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarEmprestimo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="LivroID" class="control-label"></label>
+                <input asp-for="LivroID" class="form-control" />
+                <span asp-validation-for="LivroID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteID" class="control-label"></label>
+                <input asp-for="ClienteID" class="form-control" />
+                <span asp-validation-for="ClienteID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataEmprestimo" class="control-label"></label>
+                <input asp-for="DataEmprestimo" class="form-control" />
+                <span asp-validation-for="DataEmprestimo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreviaDevolucao" class="control-label"></label>
+                <input asp-for="PreviaDevolucao" class="form-control" />
+                <span asp-validation-for="PreviaDevolucao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Emprestimo">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

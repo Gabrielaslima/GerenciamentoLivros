@@ -1,0 +1,30 @@
+﻿@model AluguelWeb.Models.Entidades.Editora
+
+@{
+    ViewData["Title"] = "DetalhesEditora";
+}
+
+<h2>DetalhesEditora</h2>
+
+<div>
+    <h4>Editora</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EdicaoEditora" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Editora">Back to List</a>
+</div>

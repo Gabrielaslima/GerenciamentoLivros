@@ -1,0 +1,42 @@
+﻿@model AluguelWeb.Models.Entidades.Emprestimo
+
+@{
+    ViewData["Title"] = "DetalhesEmprestimo";
+}
+
+<h2>Detalhes do Emprestimo</h2>
+
+<div>
+    <h4>Emprestimo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LivroID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClienteID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataEmprestimo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviaDevolucao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PreviaDevolucao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EdicaoEmprestimo" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Emprestimo">Back to List</a>
+</div>

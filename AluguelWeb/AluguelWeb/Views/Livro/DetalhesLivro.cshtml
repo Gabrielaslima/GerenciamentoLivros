@@ -1,0 +1,48 @@
+﻿@model AluguelWeb.Models.Entidades.Livro
+
+@{
+    ViewData["Title"] = "DetalhesLivro";
+}
+
+<h2>Detalhes do Livro</h2>
+
+<div>
+    <h4>Livro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            Codigo Autor
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AutorID)
+        </dd>
+        <dt>
+            Codigo Editora
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EditoraID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "EdicaoLivro", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Livro">Back to List</a>
+</div>

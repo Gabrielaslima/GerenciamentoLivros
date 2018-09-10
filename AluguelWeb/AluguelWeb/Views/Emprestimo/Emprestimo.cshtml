@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AluguelWeb.Models.Entidades.Emprestimo>
+
+@{
+    ViewData["Title"] = "Emprestimo";
+}
+
+<h2>Emprestimo</h2>
+
+<p>
+    <a asp-action="CadastroEmprestimo">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Codigo Emprestimo
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEmprestimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreviaDevolucao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEmprestimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreviaDevolucao)
+            </td>
+            <td>
+                <a asp-action="EdicaoEmprestimo" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="DetalhesEmprestimo" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="DeletarEmprestimo" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
